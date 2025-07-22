@@ -58,6 +58,7 @@
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.1",
+    "vite": "^6.2.3",
     "zod": "^3.23.8"
   },
   "devDependencies": {
@@ -69,8 +70,7 @@
     "postcss": "^8.4.38",
     "tailwindcss": "3.4.1",
     "tempo-devtools": "^2.0.109",
-    "typescript": "^5.8.2",
-    "vite": "^6.2.3"
+    "typescript": "^5.8.2"
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "postcss.config.js",
