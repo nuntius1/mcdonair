@@ -18,14 +18,13 @@ interface AboutContactSectionProps {
 const AboutContactSection = ({
   restaurantStory = "Mediterranean Cuisine (MC Donair) was founded in 2010 with a passion for authentic Mediterranean flavors. Our recipes have been passed down through generations, bringing the taste of the Mediterranean to your neighborhood. We take pride in using only the freshest ingredients and traditional cooking methods to create our signature donairs and other Mediterranean delights.",
   businessHours = [
-    { day: "Monday - Thursday", hours: "11:00 AM - 9:00 PM" },
-    { day: "Friday - Saturday", hours: "11:00 AM - 10:00 PM" },
-    { day: "Sunday", hours: "12:00 PM - 8:00 PM" },
+    { day: "Monday - Saturday", hours: "11:00 AM - 8:00 PM" },
+    { day: "Sunday", hours: "Closed" },
   ],
-  address = "123 Mediterranean Ave, Foodville, CA 90210",
-  phone = "(555) 123-4567",
+  address = "B-1000 Nairn Ave Winnipeg, Manitoba, Canada",
+  phone = "(204) 219-4422",
   email = "info@mcdonair.com",
-  mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.7462606519064!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjYiTiAxMjLCsDI1JzA5LjgiVw!5e0!3m2!1sen!2sus!4v1620841112082!5m2!1sen!2sus",
+  mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2618.5!2d-97.0778!3d49.6687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea73f6b2b7e5e3%3A0x1234567890abcdef!2sB-1000%20Nairn%20Ave%2C%20Winnipeg%2C%20MB%2C%20Canada!5e0!3m2!1sen!2sca!4v1620841112082!5m2!1sen!2sca",
 }: AboutContactSectionProps) => {
   return (
     <section className="w-full py-12 sm:py-16 bg-background">

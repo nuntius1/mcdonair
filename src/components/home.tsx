@@ -201,9 +201,9 @@ const Home = () => {
             <div className="sm:col-span-2 lg:col-span-1">
               <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Contact Us</h3>
               <div className="space-y-1 text-sm sm:text-base mb-4">
-                <p>123 Mediterranean St.</p>
-                <p>Foodville, CA 90210</p>
-                <p>Phone: (555) 123-4567</p>
+                <p>B-1000 Nairn Ave</p>
+                <p>Winnipeg, Manitoba, Canada</p>
+                <p>Phone: (204) 219-4422</p>
                 <p>Email: info@mcdonair.com</p>
               </div>
               <div className="pt-4 border-t border-white/20">
