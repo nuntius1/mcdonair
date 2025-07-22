@@ -32,7 +32,7 @@ const AboutContactSection = ({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {/* About Section */}
           <div className="bg-[#f8f4e9] rounded-xl p-6 sm:p-8 shadow-md">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#b45a33] mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#EE1C25] mb-4 sm:mb-6">
               Our Story
             </h2>
             <div className="relative mb-6 sm:mb-8">
@@ -47,14 +47,14 @@ const AboutContactSection = ({
               {restaurantStory}
             </p>
             <div className="flex items-center justify-center space-x-4">
-              <span className="inline-block w-3 h-3 rounded-full bg-[#b45a33]"></span>
-              <span className="inline-block w-3 h-3 rounded-full bg-[#5c7c54]"></span>
-              <span className="inline-block w-3 h-3 rounded-full bg-[#e9c46a]"></span>
+              <span className="inline-block w-3 h-3 rounded-full bg-[#EE1C25]"></span>
+              <span className="inline-block w-3 h-3 rounded-full bg-[#00A651]"></span>
+              <span className="inline-block w-3 h-3 rounded-full bg-white border border-gray-300"></span>
             </div>
           </div>
 
           {/* Contact Section */}
-          <div className="bg-[#5c7c54] text-white rounded-xl p-6 sm:p-8 shadow-md">
+          <div className="bg-[#00A651] text-white rounded-xl p-6 sm:p-8 shadow-md">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Contact Us</h2>
 
             {/* Business Hours */}

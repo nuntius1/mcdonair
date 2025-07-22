@@ -78,7 +78,7 @@ const MenuItem = ({
 
       <CardFooter className="p-4 sm:p-6 pt-2">
         <div className="w-full text-center">
-          <span className="text-lg font-bold text-[#A45A52]">
+          <span className="text-lg font-bold text-[#EE1C25]">
             ${price.toFixed(2)}
           </span>
         </div>

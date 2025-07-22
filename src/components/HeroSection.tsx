@@ -43,7 +43,7 @@ const HeroSection = ({
         </p>
         <Button
           size="lg"
-          className="bg-[#c25a3a] hover:bg-[#a84a2e] text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold"
+          className="bg-[#EE1C25] hover:bg-[#CC1821] text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold"
           onClick={onButtonClick}
         >
           {buttonText}

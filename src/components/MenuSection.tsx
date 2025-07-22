@@ -26,7 +26,7 @@ const MenuSection = ({ categories = defaultCategories }: MenuSectionProps) => {
   return (
     <section id="menu" className="py-12 sm:py-16 px-4 md:px-8 lg:px-16 bg-white">
       <div className="container mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-2 text-[#A84930]">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-2 text-[#EE1C25]">
           Our Menu
         </h2>
         <p className="text-center mb-8 sm:mb-10 text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
@@ -44,7 +44,7 @@ const MenuSection = ({ categories = defaultCategories }: MenuSectionProps) => {
               <TabsTrigger
                 key={category.id}
                 value={category.id}
-                className="px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg whitespace-nowrap data-[state=active]:bg-[#A84930] data-[state=active]:text-white flex-shrink-0"
+                className="px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg whitespace-nowrap data-[state=active]:bg-[#EE1C25] data-[state=active]:text-white flex-shrink-0"
               >
                 {category.name}
               </TabsTrigger>

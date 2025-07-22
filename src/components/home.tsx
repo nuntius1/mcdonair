@@ -21,10 +21,10 @@ const Home = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
-              <h1 className="text-xl sm:text-2xl font-bold text-[#A45A52] mr-2">
+              <h1 className="text-xl sm:text-2xl font-bold text-[#EE1C25] mr-2">
                 McDonair & Shawarma
               </h1>
-              <span className="hidden lg:inline-block text-sm text-[#5B8C5A]">
+              <span className="hidden lg:inline-block text-sm text-[#00A651]">
                 Mediterranean Cuisine
               </span>
             </div>
@@ -33,25 +33,25 @@ const Home = () => {
             <div className="hidden md:flex space-x-6">
               <a
                 href="#home"
-                className="text-[#5B8C5A] hover:text-[#A45A52] transition-colors"
+                className="text-[#00A651] hover:text-[#EE1C25] transition-colors"
               >
                 Home
               </a>
               <a
                 href="#menu"
-                className="text-[#5B8C5A] hover:text-[#A45A52] transition-colors"
+                className="text-[#00A651] hover:text-[#EE1C25] transition-colors"
               >
                 Menu
               </a>
               <a
                 href="#about"
-                className="text-[#5B8C5A] hover:text-[#A45A52] transition-colors"
+                className="text-[#00A651] hover:text-[#EE1C25] transition-colors"
               >
                 About
               </a>
               <a
                 href="#contact"
-                className="text-[#5B8C5A] hover:text-[#A45A52] transition-colors"
+                className="text-[#00A651] hover:text-[#EE1C25] transition-colors"
               >
                 Contact
               </a>
@@ -76,7 +76,7 @@ const Home = () => {
               aria-label="Toggle menu"
             >
               <svg
-                className="w-6 h-6 text-[#5B8C5A]"
+                className="w-6 h-6 text-[#00A651]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -106,28 +106,28 @@ const Home = () => {
               <div className="flex flex-col space-y-4 mt-4">
                 <a
                   href="#home"
-                  className="text-[#5B8C5A] hover:text-[#A45A52] transition-colors py-2"
+                  className="text-[#00A651] hover:text-[#EE1C25] transition-colors py-2"
                   onClick={closeMobileMenu}
                 >
                   Home
                 </a>
                 <a
                   href="#menu"
-                  className="text-[#5B8C5A] hover:text-[#A45A52] transition-colors py-2"
+                  className="text-[#00A651] hover:text-[#EE1C25] transition-colors py-2"
                   onClick={closeMobileMenu}
                 >
                   Menu
                 </a>
                 <a
                   href="#about"
-                  className="text-[#5B8C5A] hover:text-[#A45A52] transition-colors py-2"
+                  className="text-[#00A651] hover:text-[#EE1C25] transition-colors py-2"
                   onClick={closeMobileMenu}
                 >
                   About
                 </a>
                 <a
                   href="#contact"
-                  className="text-[#5B8C5A] hover:text-[#A45A52] transition-colors py-2"
+                  className="text-[#00A651] hover:text-[#EE1C25] transition-colors py-2"
                   onClick={closeMobileMenu}
                 >
                   Contact
@@ -164,7 +164,7 @@ const Home = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#5B8C5A] text-white py-8 sm:py-12">
+      <footer className="bg-[#00A651] text-white py-8 sm:py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="sm:col-span-2 lg:col-span-1">
