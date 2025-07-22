@@ -21,37 +21,42 @@ const Home = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
+              <img
+                src="/images/icon.png"
+                alt="McDonair Logo"
+                className="h-10 w-10 mr-2"
+              />
               <h1 className="text-xl sm:text-2xl font-bold text-[#EE1C25] mr-2">
                 McDonair & Shawarma
               </h1>
-              <span className="hidden lg:inline-block text-sm text-[#00A651]">
-                Mediterranean Cuisine
-              </span>
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-6">
+            <div className="hidden md:flex space-x-8 absolute left-1/2 transform -translate-x-1/2">
               <a
                 href="#home"
-                className="text-[#00A651] hover:text-[#EE1C25] transition-colors"
+                className="text-[#00A651] hover:text-[#EE1C25] transition-colors text-lg"
               >
                 Home
               </a>
+
               <a
-                href="#menu"
-                className="text-[#00A651] hover:text-[#EE1C25] transition-colors"
+                href="#menu" 
+                className="text-[#00A651] hover:text-[#EE1C25] transition-colors text-lg"
               >
                 Menu
               </a>
+
               <a
                 href="#about"
-                className="text-[#00A651] hover:text-[#EE1C25] transition-colors"
+                className="text-[#00A651] hover:text-[#EE1C25] transition-colors text-lg"
               >
                 About
               </a>
+
               <a
                 href="#contact"
-                className="text-[#00A651] hover:text-[#EE1C25] transition-colors"
+                className="text-[#00A651] hover:text-[#EE1C25] transition-colors text-lg"
               >
                 Contact
               </a>
