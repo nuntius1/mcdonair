@@ -16,7 +16,7 @@ interface AboutContactSectionProps {
 }
 
 const AboutContactSection = ({
-  restaurantStory = "Welcome to McDonair & Shawarma — a family-owned and operated business proudly established in 2025.\n\nRooted in tradition and fueled by passion, our journey began with a simple mission: to bring the rich, authentic flavors of Mediterranean cuisine to our community. Inspired especially by the taste of Lebanon, our recipes are more than just food—they're cherished family traditions passed down through generations, with each bite telling a story of heritage, love, and craftsmanship.\n\nAt McDonair & Shawarma, we use only the freshest ingredients and time-honored cooking methods to craft our signature donairs, shawarmas, and a variety of Mediterranean delights. From our kitchen to your table, every meal is made with care, pride, and a deep respect for the flavors that inspired it.\n\nCome taste the difference that family makes.",
+  restaurantStory = "Welcome to McDonair & Shawarma, a family-owned business proudly established in 2025.\n\nRooted in tradition and inspired by the rich flavors of Lebanon, our mission is simple: to share authentic Mediterranean cuisine made with love and passed-down family recipes. Every dish—from our signature donairs and shawarmas to other classics—is crafted with fresh ingredients and time-honored techniques.\n\nFrom our kitchen to your table, come taste the difference that family makes.",
   businessHours = [
     { day: "Monday - Saturday", hours: "11:00 AM - 8:00 PM" },
     { day: "Sunday", hours: "Closed" },
