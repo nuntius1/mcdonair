@@ -24,7 +24,7 @@ const MenuSection = ({ categories = defaultCategories }: MenuSectionProps) => {
   );
 
   return (
-    <section id="menu" className="py-12 sm:py-16 px-4 md:px-8 lg:px-16 bg-white">
+    <section id="menu" className="py-12 sm:py-16 px-1 md:px-8 lg:px-16 bg-white">
       <div className="container mx-auto px-1">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-2 text-[#EE1C25]">
           Our Menu
@@ -101,7 +101,7 @@ const defaultCategories = [
         name: "Falafel Wrap",
         description:
           "Large pita, lettuce, tomato, parsley, pickle, pickled turnip, tahini sauce",
-        price: 10.99,
+        price: 11.99,
         image:
           "/images/falafel_wrap.jpeg",
       },
@@ -116,7 +116,7 @@ const defaultCategories = [
         name: "Signature Platter",
         description:
           "Rice, fries, your choice of shawarma, donair or mixed topped with our signature garlic sauce",
-        price: 16.99,
+        price: 19.99,
         image:
           "/images/signature_platter.jpeg",
       },
@@ -134,7 +134,7 @@ const defaultCategories = [
         name: "Falafel Platter",
         description:
           "Salad, hummus, 5 falafel balls, tahini sauce, pita bread",
-        price: 14.99,
+        price: 15.99,
         image:
           "/images/platter.jpeg",
       },
@@ -232,11 +232,28 @@ const defaultCategories = [
           "/images/bottled_water.webp",
       },
       {
+        id: "barbican",
+        name: "Barbican",
+        description:
+          "A popular, non-alcoholic, malt beverage known for its refreshing taste and variety of flavors",
+        price: 2.99,
+        image:
+          "/images/barbican.jpeg",
+      }, {
+        id: "freez",
+        name: "Freez",
+        description:
+          "A delicious carbonated drink with a variety of natural flavors.",
+        price: 2.99,
+        image:
+          "/images/freez.webp",
+      },
+      {
         id: "baklava-mix",
         name: "Baklava Mix",
         description:
           "Traditional Middle Eastern pastry with nuts and honey",
-        price: 7.99,
+        price: 8.99,
         image:
           "/images/baklava_mix.jpg",
       },

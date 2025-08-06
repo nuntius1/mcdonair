@@ -16,8 +16,8 @@ const HeroSection = ({
   buttonText = "Download Menu",
   onButtonClick = () => {
     const link = document.createElement('a');
-    link.href = '/images/menu.jpeg';
-    link.download = 'McDonair-Menu.jpeg';
+    link.href = '/images/menu.jpg';
+    link.download = 'McDonair-Menu.jpg';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

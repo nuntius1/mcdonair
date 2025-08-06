@@ -65,7 +65,7 @@ const Home = () => {
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center space-x-3">
               <a
-                href="https://www.skipthedishes.com"
+                href="https://www.skipthedishes.com/mcdonair-and-shawarma?serviceType=delivery&utm_source=google&utm_medium=organic&utm_campaign=foodorder"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#FF6B35] text-white px-4 py-2 rounded-md hover:bg-[#E55A2B] transition-colors flex items-center space-x-2"
@@ -139,7 +139,7 @@ const Home = () => {
                 </a>
                 <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
                   <a
-                    href="https://www.skipthedishes.com"
+                    href="https://www.skipthedishes.com/mcdonair-and-shawarma?serviceType=delivery&utm_source=google&utm_medium=organic&utm_campaign=foodorder"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-[#FF6B35] text-white px-4 py-3 rounded-md hover:bg-[#E55A2B] transition-colors text-center"
@@ -214,7 +214,7 @@ const Home = () => {
               <div className="pt-4 border-t border-white/20">
                 <p className="font-semibold mb-3 text-sm sm:text-base">Order Online:</p>
                 <a
-                  href="https://www.skipthedishes.com"
+                  href="https://www.skipthedishes.com/mcdonair-and-shawarma?serviceType=delivery&utm_source=google&utm_medium=organic&utm_campaign=foodorder"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-[#FF6B35] text-white px-4 py-2 sm:py-3 rounded-md hover:bg-[#E55A2B] transition-colors text-sm sm:text-base"

@@ -16,7 +16,7 @@ interface AboutContactSectionProps {
 }
 
 const AboutContactSection = ({
-  restaurantStory = "Mediterranean Cuisine (MC Donair) was founded in 2010 with a passion for authentic Mediterranean flavors. Our recipes have been passed down through generations, bringing the taste of the Mediterranean to your neighborhood. We take pride in using only the freshest ingredients and traditional cooking methods to create our signature donairs and other Mediterranean delights.",
+  restaurantStory = "Welcome to McDonair & Shawarma — a family-owned and operated business proudly established in 2025.\n\nRooted in tradition and fueled by passion, our journey began with a simple mission: to bring the rich, authentic flavors of Mediterranean cuisine to our community. Inspired especially by the taste of Lebanon, our recipes are more than just food—they're cherished family traditions passed down through generations, with each bite telling a story of heritage, love, and craftsmanship.\n\nAt McDonair & Shawarma, we use only the freshest ingredients and time-honored cooking methods to craft our signature donairs, shawarmas, and a variety of Mediterranean delights. From our kitchen to your table, every meal is made with care, pride, and a deep respect for the flavors that inspired it.\n\nCome taste the difference that family makes.",
   businessHours = [
     { day: "Monday - Saturday", hours: "11:00 AM - 8:00 PM" },
     { day: "Sunday", hours: "Closed" },
@@ -43,9 +43,13 @@ const AboutContactSection = ({
               />
               <div className="absolute inset-0 bg-black/20 rounded-lg"></div>
             </div>
-            <p className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">
-              {restaurantStory}
-            </p>
+            <div className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed space-y-4">
+              {restaurantStory.split('\n\n').map((paragraph, index) => (
+                <p key={index} className="leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
             <div className="flex items-center justify-center space-x-4">
               <span className="inline-block w-3 h-3 rounded-full bg-[#EE1C25]"></span>
               <span className="inline-block w-3 h-3 rounded-full bg-[#00A651]"></span>
