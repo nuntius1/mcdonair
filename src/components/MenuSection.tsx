@@ -152,7 +152,7 @@ const defaultCategories = [
           "Fresh mixed greens with Mediterranean vegetables (Add meat for $4)",
         price: 11.99,
         image:
-          "/images/side_salad.jpeg",
+          "/images/large_house_salad.webp",
       },
       {
         id: "side-salad",
