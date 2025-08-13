@@ -23,15 +23,15 @@ const AboutContactSection = ({
   ],
   address = "B-1000 Nairn Ave Winnipeg, Manitoba, Canada",
   phone = "(204) 219-4422",
-  email = "info@mcdonair.com",
+  email = "McDonair1000@gmail.com",
   mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2618.5!2d-97.0778!3d49.6687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea73f6b2b7e5e3%3A0x1234567890abcdef!2sB-1000%20Nairn%20Ave%2C%20Winnipeg%2C%20MB%2C%20Canada!5e0!3m2!1sen!2sca!4v1620841112082!5m2!1sen!2sca",
 }: AboutContactSectionProps) => {
   return (
     <section className="w-full py-12 sm:py-16 bg-background">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8">
           {/* About Section */}
-          <div className="bg-[#f8f4e9] rounded-xl p-6 sm:p-8 shadow-md">
+          {/* <div id="ourstory" className="bg-[#f8f4e9] rounded-xl p-6 sm:p-8 shadow-md">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#EE1C25] mb-4 sm:mb-6">
               Our Story
             </h2>
@@ -55,10 +55,10 @@ const AboutContactSection = ({
               <span className="inline-block w-3 h-3 rounded-full bg-[#00A651]"></span>
               <span className="inline-block w-3 h-3 rounded-full bg-white border border-gray-300"></span>
             </div>
-          </div>
+          </div> */}
 
           {/* Contact Section */}
-          <div className="bg-[#00A651] text-white rounded-xl p-6 sm:p-8 shadow-md">
+          <div id="contact" className="bg-[#00A651] text-white rounded-xl p-6 sm:p-8 shadow-md w-full md:w-1/2 mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Contact Us</h2>
 
             {/* Business Hours */}

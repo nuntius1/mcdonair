@@ -30,11 +30,15 @@ const MenuItem = ({
 }: MenuItemProps) => {
   return (
     <Card className="w-full max-w-[320px] sm:max-w-[350px] overflow-hidden transition-all hover:shadow-lg bg-white">
-      <div className="relative h-40 sm:h-48 overflow-hidden">
+      <div className="relative h-40 sm:h-48 overflow-hidden bg-gray-50">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover object-center transition-transform hover:scale-105"
+          className={`w-full h-full transition-transform hover:scale-105 ${
+            category === "drinks" 
+              ? "object-contain object-center" 
+              : "object-cover object-center"
+          }`}
         />
         {isPopular && (
           <Badge

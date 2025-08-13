@@ -170,7 +170,7 @@ const Home = () => {
 
       {/* Footer */}
       <footer className="bg-[#00A651] text-white py-8 sm:py-12">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-3 sm:px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="sm:col-span-2 lg:col-span-1">
               <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">MC Donair & Shawarma</h3>
@@ -209,7 +209,7 @@ const Home = () => {
                 <p>B-1000 Nairn Ave</p>
                 <p>Winnipeg, Manitoba, Canada</p>
                 <p>Phone: (204) 219-4422</p>
-                <p>Email: info@mcdonair.com</p>
+                <p>Email: McDonair1000@gmail.com</p>
               </div>
               <div className="pt-4 border-t border-white/20">
                 <p className="font-semibold mb-3 text-sm sm:text-base">Order Online:</p>

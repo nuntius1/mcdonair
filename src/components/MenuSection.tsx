@@ -61,6 +61,7 @@ const MenuSection = ({ categories = defaultCategories }: MenuSectionProps) => {
                     description={item.description}
                     price={item.price}
                     image={item.image}
+                    category={category.id}
                   />
                 ))}
               </div>
@@ -136,7 +137,7 @@ const defaultCategories = [
           "Salad, hummus, 5 falafel balls, tahini sauce, pita bread",
         price: 15.99,
         image:
-          "/images/platter.jpeg",
+          "/images/falafel_platter.jpeg",
       },
     ],
   },
@@ -217,28 +218,28 @@ const defaultCategories = [
         id: "can-drink",
         name: "Can Drink",
         description:
-          "Assorted soft drinks in cans",
+          "A refreshing selection of ice-cold carbonated soft drinks.",
         price: 1.75,
         image:
-          "/images/can_drinks.jpg",
+          "/images/can_drinks.png",
       },
       {
         id: "bottle-water",
         name: "Bottle Water",
         description:
-          "Fresh bottled water",
+          "Fresh bottled water.",
         price: 1.75,
         image:
-          "/images/bottled_water.webp",
+          "/images/bottled_water.png",
       },
       {
         id: "barbican",
         name: "Barbican",
         description:
-          "A popular, non-alcoholic, malt beverage known for its refreshing taste and variety of flavors",
+          "A popular, non-alcoholic, malt beverage known for its refreshing taste and variety of flavors.",
         price: 2.99,
         image:
-          "/images/barbican.jpeg",
+          "/images/barbican.png",
       }, {
         id: "freez",
         name: "Freez",
@@ -246,13 +247,22 @@ const defaultCategories = [
           "A delicious carbonated drink with a variety of natural flavors.",
         price: 2.99,
         image:
-          "/images/freez.webp",
+          "/images/freez.png",
+      },
+      {
+        id: "best-juice",
+        name: "Best Juice",
+        description:
+          "Refreshing tropical fruit drinks that deliver vibrant flavors and natural goodness.",
+        price: 2.99,
+        image:
+          "/images/best_juice.png",
       },
       {
         id: "baklava-mix",
         name: "Baklava Mix",
         description:
-          "Traditional Middle Eastern pastry with nuts and honey",
+          "Traditional Middle Eastern pastry with nuts and honey.",
         price: 8.99,
         image:
           "/images/baklava_mix.jpg",

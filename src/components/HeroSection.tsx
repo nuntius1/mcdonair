@@ -13,14 +13,9 @@ const HeroSection = ({
   title = "McDonair & Shawarma",
   tagline = "Welcome to McDonair & Shawarma, a family-owned business proudly established in 2025.\n\nRooted in tradition and inspired by the rich flavors of Lebanon, our mission is simple: to share authentic Mediterranean cuisine made with love and passed-down family recipes. Every dish—from our signature donairs and shawarmas to other classics—is crafted with fresh ingredients and time-honored techniques.\n\nFrom our kitchen to your table, come taste the difference that family makes.",
   backgroundImage = "/images/hero_image.jpeg",
-  buttonText = "Download Menu",
+  buttonText = "See Menu",
   onButtonClick = () => {
-    const link = document.createElement('a');
-    link.href = '/images/menu.jpg';
-    link.download = 'McDonair-Menu.jpg';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.open('/images/menu.jpg', '_blank');
   },
 }: HeroSectionProps) => {
   return (
@@ -39,7 +34,7 @@ const HeroSection = ({
           <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6">
             {title}
           </h1>
-          <div className="text-xs xs:text-sm sm:text-base md:text-lg mb-4 sm:mb-6 md:mb-8 space-y-2 sm:space-y-3 md:space-y-4">
+          <div className="text-base xs:text-lg sm:text-xl md:text-2xl mb-4 sm:mb-6 md:mb-8 space-y-2 sm:space-y-3 md:space-y-4">
             {tagline.split('\n\n').map((paragraph, index) => (
               <p key={index}>
                 {paragraph}
