@@ -25,7 +25,25 @@ app.use(cors({
 }));
 
 app.use(helmet({
-  crossOriginResourcePolicy: { policy: "cross-origin" }
+  crossOriginResourcePolicy: { policy: "cross-origin" },
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      imgSrc: [
+        "'self'",
+        "data:",
+        "https://d3do3bxesey7a0.cloudfront.net",
+        process.env.CDN_URL ? new URL(process.env.CDN_URL).origin : null
+      ].filter(Boolean),
+      scriptSrc: ["'self'", "https://api.tempolabs.ai"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      connectSrc: ["'self'"],
+      fontSrc: ["'self'", "data:"],
+      objectSrc: ["'none'"],
+      mediaSrc: ["'self'"],
+      frameSrc: ["'none'"],
+    },
+  },
 }));
 app.use(morgan("combined"));
 app.use(express.json());
