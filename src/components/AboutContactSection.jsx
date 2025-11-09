@@ -51,7 +51,7 @@ const AboutContactSection = ({ storeDetails }) => {
 
           {/* Contact Section */}
           <div id="contact" className="bg-[#00A651] text-black rounded-xl p-6 sm:p-8 shadow-md w-full md:w-1/2 mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Contact Us</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-[#EE1C25]">Contact Us</h2>
 
             {/* Business Hours */}
             <div className="mb-6 sm:mb-8">

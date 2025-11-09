@@ -75,7 +75,7 @@ const Home = () => {
               alt="McDonair Logo"
               className="h-8 w-8 sm:h-10 sm:w-10 me-2"
             />
-            <h1 className="text-base sm:text-xl md:text-2xl font-bold text-black mb-0">
+            <h1 className="text-base sm:text-xl md:text-2xl font-bold text-[#EE1C25] mb-0">
               {storeDetails.short_name}
             </h1>
           </NavbarBrand>
@@ -159,13 +159,13 @@ const Home = () => {
         <div className="container mx-auto px-3 sm:px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">  { storeDetails.short_name }</h3>
-              <p className="text-sm sm:text-base leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-[#EE1C25]">  { storeDetails.short_name }</h3>
+              <p className="text-sm sm:text-base leading-relaxed text-[#EE1C25]">
                  { storeDetails.our_menu_description }
               </p>
             </div>
             <div>
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Quick Links</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-[#EE1C25]">Quick Links</h3>
               <ul className="space-y-2 text-sm sm:text-base">
                 <li>
                   <a href="#home" className="hover:underline transition-colors">
@@ -190,7 +190,7 @@ const Home = () => {
               </ul>
             </div>
             <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Contact Us</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-[#EE1C25]">Contact Us</h3>
               <div className="space-y-1 text-sm sm:text-base mb-4">
                 <p>{ storeDetails?.address }</p>
                 <p>{ storeDetails?.city }, { storeDetails?.province }, { storeDetails?.country }</p>

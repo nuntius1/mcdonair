@@ -57,7 +57,7 @@ const MenuItem = ({
           {isSpicy && (
             <Badge
               variant="outline"
-              className="text-xs border-red-500 text-red-600"
+              className="text-xs border-[#EE1C25] text-[#EE1C25]"
             >
               Spicy
             </Badge>

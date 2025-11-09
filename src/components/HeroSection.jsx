@@ -25,7 +25,7 @@ const HeroSection = ({ storeDetails }) => {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-3 sm:px-6 md:px-8 text-center text-black w-full">
         <div className="bg-[#f8f4e9]/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 lg:p-10 border border-[#f8f4e9]/20 w-full max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto">
-          <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6">
+          <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 text-[#CC1821]">
             {title}
           </h1>
           <div className="text-base xs:text-md sm:text-xl md:text-xl mb-4 sm:mb-6 md:mb-8 space-y-2 sm:space-y-3 md:space-y-4">
