@@ -317,7 +317,7 @@ export default function MenuItems() {
                                   {item.description}
                                 </Card.Text>
                                 <div className="d-flex justify-content-between align-items-center mb-2">
-                                  <span className="badge bg-secondary">{item.category}</span>
+                                  <span className="badge bg-black text-white">{item.category}</span>
                                   <span className="fw-bold text-black">${parseFloat(item.price).toFixed(2)}</span>
                                 </div>
                                 <div className="d-flex gap-2 mt-auto">
@@ -376,7 +376,7 @@ export default function MenuItems() {
                                   {item.description}
                                 </Card.Text>
                                 <div className="d-flex justify-content-between align-items-center mb-2">
-                                  <span className="badge bg-secondary">{item.category}</span>
+                                  <span className="badge bg-black text-white">{item.category}</span>
                                   <span className="fw-bold text-black">${parseFloat(item.price).toFixed(2)}</span>
                                 </div>
                                 <div className="d-flex gap-2 mt-auto">

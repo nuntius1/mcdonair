@@ -35,13 +35,13 @@ const HeroSection = ({ storeDetails }) => {
               </p>
             ))}
           </div>
-          <Button
+          {/* <Button
             size="lg"
             className="bg-[#EE1C25] hover:bg-[#CC1821] text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 text-sm sm:text-base md:text-lg font-semibold w-full sm:w-auto"
             onClick={onButtonClick}
           >
             {buttonText}
-          </Button>
+          </Button> */}
         </div>
       </div>
     </div>

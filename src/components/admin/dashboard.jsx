@@ -1,15 +1,36 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Container, Row, Col, Nav } from "react-bootstrap";
-import { Home, LayoutDashboard, Store, UtensilsCrossed, Users } from "lucide-react";
+import { Home, LayoutDashboard, Store, UtensilsCrossed, Users, LogOut } from "lucide-react";
 import MenuItems from "./MenuItems";
 import StoreDetailsForm from "./StoreDetailsForm";
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../../contexts/AuthContext";
 
 export default function Dashboard() {
+  const { setAuth } = useContext(AuthContext);
   const [mounted, didMount] = useState(false);
   const [loading, isLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("dashboard");
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Clear localStorage
+    localStorage.removeItem('accessToken');
+    localStorage.setItem('loggedIn', false);
+    
+    // Reset auth to guest
+    setAuth({
+      role: 'guest',
+      isLoggedIn: false,
+      first_name: null,
+      last_name: null,
+      email: null,
+      accessToken: null,
+    });
+    
+    // Navigate to home page
+    navigate('/');
+  };
 
   useEffect(() => {
     didMount(true);
@@ -68,6 +89,15 @@ export default function Dashboard() {
                 >
                  <Home size={18} />
                   Home
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link
+                  onClick={handleLogout}
+                  className="text-[#6B7280] hover:text-[#4B5563]"
+                >
+                  <LogOut size={18} />
+                  Log out
                 </Nav.Link>
               </Nav.Item>
             </Nav>

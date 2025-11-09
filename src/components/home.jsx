@@ -6,6 +6,7 @@ import AboutContactSection from "./AboutContactSection";
 import { api } from "../components/users/api";
 import AuthContext from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { Settings, LogOut } from "lucide-react";
 
 const Home = () => {
   const { auth, setAuth } = useContext(AuthContext);
@@ -98,12 +99,12 @@ const Home = () => {
                 Contact
               </Nav.Link>
             </Nav>
-            <Nav className="ms-lg-auto flex-column flex-lg-row gap-2">
+            <Nav className="ms-lg-auto flex-column flex-lg-row gap-2 align-items-center">
               <a
                 href="https://www.skipthedishes.com/mcdonair-and-shawarma?serviceType=delivery&utm_source=google&utm_medium=organic&utm_campaign=foodorder"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn bg-[#FF6B35] text-white px-3 px-lg-4 py-2 rounded-md hover:bg-[#E55A2B] border-0 text-sm sm:text-base"
+                className="btn bg-[#FF6B35] text-white px-3 px-lg-4 py-2 rounded-md hover:bg-[#E55A2B] border-0 text-sm sm:text-base transition-colors"
               >
                 Skip the Dishes
               </a>
@@ -111,17 +112,27 @@ const Home = () => {
                 href="https://www.ubereats.com/ca/store/mcdonair-and-shawarma-1000-nairn-ave/rBv7daWPWqCYq7-Bzf1HBQ?srsltid=AfmBOop98AkgC84dzwyMy6kmrFVJHK92pGD8rkmkle99MmO-4433xv6I"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn bg-[#00A651] text-black px-3 px-lg-4 py-2 rounded-md hover:bg-green-700 border-0 text-sm sm:text-base"
+                className="btn bg-[#00A651] text-white px-3 px-lg-4 py-2 rounded-md hover:bg-[#008F45] border-0 text-sm sm:text-base transition-colors"
               >
                 Uber Eats
               </a>
               {auth?.isLoggedIn && (
-                <button
-                  onClick={handleLogout}
-                  className="btn bg-[#EE1C25] text-white px-3 px-lg-4 py-2 rounded-md hover:bg-[#CC1821] border-0 text-sm sm:text-base"
-                >
-                  Log out
-                </button>
+                <>
+                  <button
+                    onClick={() => navigate('/admin')}
+                    className="btn bg-[#2563EB] text-white px-3 px-lg-4 py-2 rounded-md hover:bg-[#1D4ED8] border-0 text-sm sm:text-base transition-colors font-medium d-flex align-items-center gap-2"
+                  >
+                    <Settings size={16} />
+                    Admin
+                  </button>
+                  <button
+                    onClick={handleLogout}
+                    className="btn bg-[#6B7280] text-white px-3 px-lg-4 py-2 rounded-md hover:bg-[#4B5563] border-0 text-sm sm:text-base transition-colors font-medium d-flex align-items-center gap-2"
+                  >
+                    <LogOut size={16} />
+                    Log out
+                  </button>
+                </>
               )}
             </Nav>
           </NavbarCollapse>
