@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
+const path = require("path");
 require("dotenv").config();
 const { neon } = require("@neondatabase/serverless");
 
@@ -91,14 +92,33 @@ app.use((err, req, res, next) => {
 
 
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({
-    success: false,
-    error: "Route not found",
-    message: `Cannot ${req.method} ${req.originalUrl}`
+// Serve static files from React app in production
+if (process.env.NODE_ENV === 'production') {
+  // Serve static files from dist folder (Vite builds to dist/)
+  app.use(express.static(path.join(__dirname, '../dist')));
+  
+  // Catch all handler: send back React's index.html file for client-side routing
+  app.get("*", (req, res) => {
+    // Don't serve index.html for API routes
+    if (req.path.startsWith('/api')) {
+      return res.status(404).json({
+        success: false,
+        error: "Route not found",
+        message: `Cannot ${req.method} ${req.originalUrl}`
+      });
+    }
+    res.sendFile(path.join(__dirname, '../dist', 'index.html'));
   });
-});
+} else {
+  // 404 handler for development (when not serving frontend)
+  app.use((req, res) => {
+    res.status(404).json({
+      success: false,
+      error: "Route not found",
+      message: `Cannot ${req.method} ${req.originalUrl}`
+    });
+  });
+}
 
 // Start server
 app.listen(PORT, () => {
