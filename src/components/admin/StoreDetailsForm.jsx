@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Form, Button, Card, Alert, Row, Col, Modal } from "react-bootstrap";
+import { Form, Button, Card, Alert, Row, Col, Modal, Container } from "react-bootstrap";
 import axios from "axios";
 import { api } from "../users/api";
 
@@ -199,103 +199,142 @@ export default function StoreDetailsForm() {
   // View Mode - Display current store details
   if (!isEditMode && !isLoading) {
     return (
-      <Card>
-        <Card.Header className="d-flex justify-content-between align-items-center">
-          <h3 className="mb-0 text-black">Store Details</h3>
-          <Button variant="outline-primary" onClick={() => setIsEditMode(true)}>
-            Edit Store Details
-          </Button>
-        </Card.Header>
-        <Card.Body>
-          {success && <Alert variant="success">{success}</Alert>}
-          
-          {formData.data_name ? (
-            <div>
-              <Row className="mb-3">
-                <Col md={6}>
-                  <h5 className="text-black"> <strong>Restaurant Short Name</strong></h5>
-                  <p className="text-black">{formData.short_name}</p>
-                </Col>
-                <Col md={6}>
-                  <h5 className="text-black"> <strong>Restaurant Long Name</strong></h5>
-                  <p className="text-black">{formData.long_name}</p>
-                </Col>
-              </Row>
-              <Row className="mb-3">
-                <Col md={4}>
-                  <h5 className="text-black"> <strong>Email</strong></h5>
-                  <p className="text-black">{formData.email || "N/A"}</p>
-                </Col>
-                <Col md={4}>
-                  <h5 className="text-black"> <strong>Phone Number</strong></h5>
-                  <p className="text-black">{formData.phone}</p>
-                </Col>
+      <>
+        <Card>
+          <Card.Header className="d-flex justify-content-between align-items-center">
+            <h3 className="mb-0 text-black">Store Details</h3>
+            <Button variant="outline-primary" onClick={() => setIsEditMode(true)}>
+              Edit Store Details
+            </Button>
+          </Card.Header>
+          <Card.Body>
+            {success && <Alert variant="success">{success}</Alert>}
+            
+            {formData.data_name ? (
+              <div>
+                <Row className="mb-3">
+                  <Col md={6}>
+                    <h5 className="text-black"> <strong>Restaurant Short Name</strong></h5>
+                    <p className="text-black">{formData.short_name}</p>
+                  </Col>
+                  <Col md={6}>
+                    <h5 className="text-black"> <strong>Restaurant Long Name</strong></h5>
+                    <p className="text-black">{formData.long_name}</p>
+                  </Col>
+                </Row>
+                <Row className="mb-3">
+                  <Col md={4}>
+                    <h5 className="text-black"> <strong>Email</strong></h5>
+                    <p className="text-black">{formData.email || "N/A"}</p>
+                  </Col>
+                  <Col md={4}>
+                    <h5 className="text-black"> <strong>Phone Number</strong></h5>
+                    <p className="text-black">{formData.phone}</p>
+                  </Col>
 
-              </Row>
+                </Row>
 
-              <div className="mb-3">
-                <h5 className="text-black"> <strong>Description</strong></h5>
-                <p className="text-black preserve-linebreaks">{formData.store_description}</p>
-              </div>
-
-              <div className="mb-3">
-                <h5 className="text-black"> <strong>Our Menu Description</strong></h5>
-                <p className="text-black preserve-linebreaks">{formData.our_menu_description}</p>
-              </div>
-
-              <Row className="mb-3">
-                <Col md={6}>
-                  <p className="mb-1 text-black"><strong>Street Address:</strong></p>
-                  <p className="text-black">{formData.address}</p>
-                </Col>
-
-                <Col md={6}>
-                  <p className="mb-1 text-black"><strong>Postal Code:</strong></p>
-                  <p className="text-black">{formData.postal_code}</p>
-                </Col>
-              </Row>
-              <Row className="mb-3">
-                 <Col md={4}>
-                  <p className="mb-1 text-black"><strong>City:</strong></p>
-                  <p className="text-black">{formData.city}</p>
-                </Col>
-                <Col md={4}>
-                  <p className="mb-1 text-black"><strong>Province/State:</strong></p>
-                  <p className="text-black">{formData.province}</p>
-                </Col>
-                <Col md={4}>
-                  <p className="mb-1 text-black"><strong>Country:</strong></p>
-                  <p className="text-black">{formData.country}</p>
-                </Col>
-                
-              </Row>
-
-              {/* {bannerPreview && (
                 <div className="mb-3">
-                  <h5>Homepage Banner</h5>
-                  <img
-                    src={bannerPreview}
-                    alt="Banner preview"
-                    className="banner-preview-image"
-                  />
+                  <h5 className="text-black"> <strong>Description</strong></h5>
+                  <p className="text-black preserve-linebreaks">{formData.store_description}</p>
                 </div>
-              )} */}
-            </div>
-          ) : (
-            <div className="text-center py-4">
-              <p className="text-black mb-3">No store details found. Click "Edit Details" to add store information.</p>
-              <Button variant="outline-primary" onClick={() => setIsEditMode(true)}>
-                Add Store Details
-              </Button>
-            </div>
-          )}
-        </Card.Body>
-      </Card>
+
+                <div className="mb-3">
+                  <h5 className="text-black"> <strong>Our Menu Description</strong></h5>
+                  <p className="text-black preserve-linebreaks">{formData.our_menu_description}</p>
+                </div>
+
+                <Row className="mb-3">
+                  <Col md={6}>
+                    <p className="mb-1 text-black"><strong>Street Address:</strong></p>
+                    <p className="text-black">{formData.address}</p>
+                  </Col>
+
+                  <Col md={6}>
+                    <p className="mb-1 text-black"><strong>Postal Code:</strong></p>
+                    <p className="text-black">{formData.postal_code}</p>
+                  </Col>
+                </Row>
+                <Row className="mb-3">
+                   <Col md={4}>
+                    <p className="mb-1 text-black"><strong>City:</strong></p>
+                    <p className="text-black">{formData.city}</p>
+                  </Col>
+                  <Col md={4}>
+                    <p className="mb-1 text-black"><strong>Province/State:</strong></p>
+                    <p className="text-black">{formData.province}</p>
+                  </Col>
+                  <Col md={4}>
+                    <p className="mb-1 text-black"><strong>Country:</strong></p>
+                    <p className="text-black">{formData.country}</p>
+                  </Col>
+                  
+                </Row>
+
+                {/* {bannerPreview && (
+                  <div className="mb-3">
+                    <h5>Homepage Banner</h5>
+                    <img
+                      src={bannerPreview}
+                      alt="Banner preview"
+                      className="banner-preview-image"
+                    />
+                  </div>
+                )} */}
+              </div>
+            ) : (
+              <div className="text-center py-4">
+                <p className="text-black mb-3">No store details found. Click "Edit Details" to add store information.</p>
+                <Button variant="outline-primary" onClick={() => setIsEditMode(true)}>
+                  Add Store Details
+                </Button>
+              </div>
+            )}
+          </Card.Body>
+        </Card>
+
+        {/* Store Hours Card
+        <Card className="mt-4">
+          <Card.Header>
+            <h3 className="mb-0 text-black">Store Hours</h3>
+          </Card.Header>
+          <Card.Body>
+            {formData.store_hours && Object.keys(formData.store_hours).length > 0 ? (
+              <div>
+                {Object.entries(formData.store_hours).map(([day, hours]) => (
+                  <Row key={day} className="mb-2 pb-2 border-bottom">
+                    <Col md={4}>
+                      <strong className="text-black">{day.charAt(0).toUpperCase() + day.slice(1)}</strong>
+                    </Col>
+                    <Col md={8}>
+                      <p className="text-black mb-0">
+                        {hours && typeof hours === 'object' && hours.open && hours.close
+                          ? `${hours.open} - ${hours.close}`
+                          : hours && typeof hours === 'string'
+                          ? hours
+                          : hours === 'closed' || hours === 'Closed'
+                          ? 'Closed'
+                          : 'N/A'}
+                      </p>
+                    </Col>
+                  </Row>
+                ))}
+              </div>
+            ) : (
+              <p className="text-black mb-0">No store hours configured.</p>
+            )}
+          </Card.Body>
+        </Card> */}
+      </>
     );
   }
 
   // Edit Mode - Show form
   if (!isLoading && isEditMode) return (
+    <Container fluid>
+      <Row>
+
+ 
     <Card>
       <Card.Header className="d-flex justify-content-between align-items-center">
         <h3 className="mb-0 text-black">Update Store Details</h3>
@@ -509,6 +548,15 @@ export default function StoreDetailsForm() {
         </Modal>
       </Card.Body>
     </Card>
+    </Row>
+
+    <Row>
+      <Card>
+        
+      </Card>
+    </Row>
+
+    </Container>
   );
 }
 
