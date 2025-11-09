@@ -39,17 +39,24 @@ app.use(express.urlencoded({ extended: true }));
 // });
 
 // Initialize PostgreSQL database connection
+if (!process.env.DATABASE_URL) {
+  console.error("ERROR: DATABASE_URL environment variable is not set!");
+  process.exit(1);
+}
+
 const pool = new pg.Pool({
-  connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.DATABASE_URL?.includes('sslmode=require') ? { rejectUnauthorized: false } : false
 });
 
 // Test database connection
 pool.connect((err, client, release) => {
   if (err) {
-    console.error("Error acquiring client:", err);
+    console.error("Error acquiring database client:", err);
+    // Don't exit - let the app start and handle errors gracefully
     return;
   }
-  console.log("Connected to the database");
+  console.log("✅ Connected to the database");
   release();
 });
 
