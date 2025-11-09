@@ -1,8 +1,9 @@
 import React from "react";
 import { Button } from "./ui/button";
+import { getBannerImageUrl } from "@/lib/imageUtils";
 
 const HeroSection = ({ storeDetails }) => {
-  const backgroundImage = storeDetails.banner_img_url || "/images/hero_image.jpeg";
+  const backgroundImage = getBannerImageUrl(storeDetails.banner_img_url);
   const title = storeDetails.short_name;
   const tagline = storeDetails.store_description;
   const buttonText = "See Menu";

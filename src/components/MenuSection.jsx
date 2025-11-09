@@ -103,7 +103,7 @@ const MenuSection = ({ storeDetails }) => {
                         name={item.name}
                         description={item.description}
                         price={item.price}
-                        image={`/api/images/file/${item.image_key}`}
+                        image={item.image_key ? `/api/images/file/${item.image_key}` : undefined}
                         category={item.category}
                       />
                     ))
