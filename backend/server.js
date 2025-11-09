@@ -98,7 +98,8 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../dist')));
   
   // Catch all handler: send back React's index.html file for client-side routing
-  app.get("*", (req, res) => {
+  // Must be after all other routes - use app.use() for Express 5 compatibility
+  app.use((req, res) => {
     // Don't serve index.html for API routes
     if (req.path.startsWith('/api')) {
       return res.status(404).json({
@@ -107,7 +108,16 @@ if (process.env.NODE_ENV === 'production') {
         message: `Cannot ${req.method} ${req.originalUrl}`
       });
     }
-    res.sendFile(path.join(__dirname, '../dist', 'index.html'));
+    // Only handle GET requests for frontend routes
+    if (req.method === 'GET') {
+      res.sendFile(path.join(__dirname, '../dist', 'index.html'));
+    } else {
+      res.status(404).json({
+        success: false,
+        error: "Route not found",
+        message: `Cannot ${req.method} ${req.originalUrl}`
+      });
+    }
   });
 } else {
   // 404 handler for development (when not serving frontend)
