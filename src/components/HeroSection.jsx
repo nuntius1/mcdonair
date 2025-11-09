@@ -1,23 +1,16 @@
 import React from "react";
 import { Button } from "./ui/button";
 
-interface HeroSectionProps {
-  title?: string;
-  tagline?: string;
-  backgroundImage?: string;
-  buttonText?: string;
-  onButtonClick?: () => void;
-}
-
-const HeroSection = ({
-  title = "McDonair & Shawarma",
-  tagline = "Welcome to McDonair & Shawarma, a family-owned business proudly established in 2025.\n\nRooted in tradition and inspired by the rich flavors of Lebanon, our mission is simple: to share authentic Mediterranean cuisine made with love and passed-down family recipes. Every dish—from our signature donairs and shawarmas to other classics—is crafted with fresh ingredients and time-honored techniques.\n\nFrom our kitchen to your table, come taste the difference that family makes.",
-  backgroundImage = "/images/hero_image.jpeg",
-  buttonText = "See Menu",
-  onButtonClick = () => {
+const HeroSection = ({ storeDetails }) => {
+  const backgroundImage = storeDetails.banner_img_url || "/images/hero_image.jpeg";
+  const title = storeDetails.short_name;
+  const tagline = storeDetails.store_description;
+  const buttonText = "See Menu";
+  const onButtonClick = () => {
     window.open('/images/menu.jpg', '_blank');
-  },
-}: HeroSectionProps) => {
+  };
+  
+  
   return (
     <div className="relative w-full h-[500px] sm:h-[600px] md:h-[650px] lg:h-[700px] bg-background">
       {/* Background image with overlay */}
@@ -29,12 +22,12 @@ const HeroSection = ({
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-3 sm:px-6 md:px-8 text-center text-gray-800 w-full">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-3 sm:px-6 md:px-8 text-center text-black w-full">
         <div className="bg-[#f8f4e9]/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 lg:p-10 border border-[#f8f4e9]/20 w-full max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto">
           <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6">
             {title}
           </h1>
-          <div className="text-base xs:text-lg sm:text-xl md:text-2xl mb-4 sm:mb-6 md:mb-8 space-y-2 sm:space-y-3 md:space-y-4">
+          <div className="text-base xs:text-md sm:text-xl md:text-xl mb-4 sm:mb-6 md:mb-8 space-y-2 sm:space-y-3 md:space-y-4">
             {tagline.split('\n\n').map((paragraph, index) => (
               <p key={index}>
                 {paragraph}
@@ -55,3 +48,4 @@ const HeroSection = ({
 };
 
 export default HeroSection;
+

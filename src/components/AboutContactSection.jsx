@@ -3,29 +3,21 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { MapPin, Clock, Phone, Mail } from "lucide-react";
 
-interface AboutContactSectionProps {
-  restaurantStory?: string;
-  businessHours?: {
-    day: string;
-    hours: string;
-  }[];
-  address?: string;
-  phone?: string;
-  email?: string;
-  mapUrl?: string;
-}
-
-const AboutContactSection = ({
-  restaurantStory = "Welcome to McDonair & Shawarma, a family-owned business proudly established in 2025.\n\nRooted in tradition and inspired by the rich flavors of Lebanon, our mission is simple: to share authentic Mediterranean cuisine made with love and passed-down family recipes. Every dish—from our signature donairs and shawarmas to other classics—is crafted with fresh ingredients and time-honored techniques.\n\nFrom our kitchen to your table, come taste the difference that family makes.",
-  businessHours = [
+const AboutContactSection = ({ storeDetails }) => {
+  const restaurantStory = storeDetails.our_menu_description;
+  const businessHours = storeDetails.business_hours || [
     { day: "Monday - Saturday", hours: "11:00 AM - 8:00 PM" },
     { day: "Sunday", hours: "Closed" },
-  ],
-  address = "B-1000 Nairn Ave Winnipeg, Manitoba, Canada",
-  phone = "(204) 219-4422",
-  email = "McDonair1000@gmail.com",
-  mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2618.5!2d-97.0778!3d49.6687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea73f6b2b7e5e3%3A0x1234567890abcdef!2sB-1000%20Nairn%20Ave%2C%20Winnipeg%2C%20MB%2C%20Canada!5e0!3m2!1sen!2sca!4v1620841112082!5m2!1sen!2sca",
-}: AboutContactSectionProps) => {
+  ];
+  const address = storeDetails.address;
+  const postal_code = storeDetails.postal_code;
+  const city = storeDetails.city;
+  const province = storeDetails.province;
+  const country = storeDetails.country;
+  const phone = storeDetails.phone;
+  const email = storeDetails.email;
+  const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2618.5!2d-97.0778!3d49.6687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea73f6b2b7e5e3%3A0x1234567890abcdef!2sB-1000%20Nairn%20Ave%2C%20Winnipeg%2C%20MB%2C%20Canada!5e0!3m2!1sen!2sca!4v1620841112082!5m2!1sen!2sca";
+
   return (
     <section className="w-full py-12 sm:py-16 bg-background">
       <div className="container mx-auto px-4">
@@ -58,7 +50,7 @@ const AboutContactSection = ({
           </div> */}
 
           {/* Contact Section */}
-          <div id="contact" className="bg-[#00A651] text-white rounded-xl p-6 sm:p-8 shadow-md w-full md:w-1/2 mx-auto">
+          <div id="contact" className="bg-[#00A651] text-black rounded-xl p-6 sm:p-8 shadow-md w-full md:w-1/2 mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Contact Us</h2>
 
             {/* Business Hours */}
@@ -90,7 +82,8 @@ const AboutContactSection = ({
                 <MapPin className="mr-2" size={18} />
                 <h3 className="text-lg sm:text-xl font-semibold">Location</h3>
               </div>
-              <p className="mb-3 sm:mb-4 text-sm sm:text-base">{address}</p>
+              <p className="mb-3 sm:mb-4 text-sm sm:text-base">{address}, {city}, </p>
+              <p className="mb-3 sm:mb-4 text-sm sm:text-base"> {province}, {postal_code}</p>
               <div className="w-full h-40 sm:h-48 rounded-lg overflow-hidden">
                 <iframe
                   src={mapUrl}
@@ -124,3 +117,4 @@ const AboutContactSection = ({
 };
 
 export default AboutContactSection;
+

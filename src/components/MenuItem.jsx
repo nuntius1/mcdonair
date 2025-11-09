@@ -7,17 +7,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-interface MenuItemProps {
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-  category?: string;
-  isPopular?: boolean;
-  isVegetarian?: boolean;
-  isSpicy?: boolean;
-}
-
 const MenuItem = ({
   name = "Classic Donair",
   description = "Traditional donair with seasoned meat, fresh vegetables, and our signature garlic sauce wrapped in a warm pita.",
@@ -27,7 +16,7 @@ const MenuItem = ({
   isPopular = false,
   isVegetarian = false,
   isSpicy = false,
-}: MenuItemProps) => {
+}) => {
   return (
     <Card className="w-full max-w-[320px] sm:max-w-[350px] overflow-hidden transition-all hover:shadow-lg bg-white">
       <div className="relative h-40 sm:h-48 overflow-hidden bg-gray-50">
@@ -52,7 +41,7 @@ const MenuItem = ({
 
       <CardHeader className="pb-2 p-4 sm:p-6">
         <div className="flex justify-between items-start gap-2">
-          <h3 className="text-base sm:text-lg font-bold text-gray-800 flex-1">
+          <h3 className="text-base sm:text-lg font-bold text-black flex-1">
             {name}
           </h3>
         </div>
@@ -77,13 +66,13 @@ const MenuItem = ({
       </CardHeader>
 
       <CardContent className="p-4 sm:p-6 pt-0">
-        <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+        <p className="text-sm text-black leading-relaxed">{description}</p>
       </CardContent>
 
       <CardFooter className="p-4 sm:p-6 pt-2">
         <div className="w-full text-center">
-          <span className="text-lg font-bold text-[#EE1C25]">
-            ${price.toFixed(2)}
+          <span className="text-lg font-bold text-black">
+            ${price}
           </span>
         </div>
       </CardFooter>
@@ -92,3 +81,4 @@ const MenuItem = ({
 };
 
 export default MenuItem;
+

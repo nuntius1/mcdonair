@@ -1,6 +1,11 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
+
+/* Layer to ensure Tailwind overrides Bootstrap - loads after Bootstrap */
+@layer utilities {
+  /* Force Tailwind utilities to override Bootstrap */
+}
 
   @layer base {
     :root {
@@ -74,3 +79,99 @@
       @apply bg-background text-foreground;
     }
   }
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+/* Dashboard Navigation Tabs Styling */
+.nav-tabs {
+  display: flex !important;
+  flex-wrap: wrap;
+}
+
+.nav-tabs .nav-link {
+  color: #000 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px;
+}
+
+.nav-tabs .nav-item.ms-auto {
+  margin-left: auto !important;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #000 !important;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.nav-tabs .nav-link.active {
+  color: #000 !important;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.nav-tabs .nav-link svg {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* Store Details Form Styling */
+.banner-preview-image {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.submit-button-right {
+  float: right;
+}
+
+/* About Contact Section Styling */
+.iframe-no-border {
+  border: 0;
+}
+
+/* Preserve line breaks in text */
+.preserve-linebreaks {
+  white-space: pre-line;
+}
+
+/* Footer background color override */
+footer.bg-green-footer {
+  background-color: #00A651 !important;
+}
+
+/* Ensure Tailwind overrides Bootstrap for specific components */
+/* Override Bootstrap's container class when used with Tailwind */
+.container.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Override Bootstrap's default styles for sections */
+section#home,
+section#menu,
+section#about,
+section#contact {
+  /* Reset Bootstrap defaults */
+  box-sizing: border-box;
+}
+
+/* Ensure Tailwind grid overrides Bootstrap grid */
+[class*="grid-cols-"] {
+  display: grid !important;
+}
+
+/* Ensure Tailwind flex overrides Bootstrap flex */
+[class*="flex"][class*="flex-"] {
+  display: flex !important;
+}
+
+/* Ensure Tailwind utilities override Bootstrap */
+/* With important: true in tailwind.config.js, all Tailwind utilities use !important */
+/* Bootstrap loads first, then Tailwind, so Tailwind overrides Bootstrap */
