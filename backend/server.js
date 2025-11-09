@@ -4,6 +4,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const path = require("path");
+const fs = require("fs");
 require("dotenv").config();
 const { neon } = require("@neondatabase/serverless");
 
@@ -94,33 +95,52 @@ app.use((err, req, res, next) => {
 
 // Serve static files from React app in production
 if (process.env.NODE_ENV === 'production') {
-  // Serve static files from dist folder (Vite builds to dist/)
-  app.use(express.static(path.join(__dirname, '../dist')));
+  const distPath = path.join(__dirname, '../dist');
+  const fs = require('fs');
   
-  // Catch all handler: send back React's index.html file for client-side routing
-  // Must be after all other routes - use app.use() for Express 5 compatibility
-  app.use((req, res) => {
-    // Don't serve index.html for API routes
-    if (req.path.startsWith('/api')) {
-      return res.status(404).json({
-        success: false,
-        error: "Route not found",
-        message: `Cannot ${req.method} ${req.originalUrl}`
-      });
-    }
-    // Only handle GET requests for frontend routes
-    if (req.method === 'GET') {
-      res.sendFile(path.join(__dirname, '../dist', 'index.html'));
-    } else {
-      res.status(404).json({
-        success: false,
-        error: "Route not found",
-        message: `Cannot ${req.method} ${req.originalUrl}`
-      });
-    }
-  });
-} else {
-  // 404 handler for development (when not serving frontend)
+  // Only serve static files if dist folder exists
+  if (fs.existsSync(distPath)) {
+    // Serve static files from dist folder (Vite builds to dist/)
+    app.use(express.static(distPath));
+    
+    // Catch all handler: send back React's index.html file for client-side routing
+    // Must be after all other routes - use app.use() for Express 5 compatibility
+    app.use((req, res) => {
+      // Don't serve index.html for API routes
+      if (req.path.startsWith('/api')) {
+        return res.status(404).json({
+          success: false,
+          error: "Route not found",
+          message: `Cannot ${req.method} ${req.originalUrl}`
+        });
+      }
+      // Only handle GET requests for frontend routes
+      if (req.method === 'GET') {
+        const indexPath = path.join(distPath, 'index.html');
+        if (fs.existsSync(indexPath)) {
+          res.sendFile(indexPath);
+        } else {
+          res.status(404).json({
+            success: false,
+            error: "Frontend not built",
+            message: "Please build the frontend before deploying"
+          });
+        }
+      } else {
+        res.status(404).json({
+          success: false,
+          error: "Route not found",
+          message: `Cannot ${req.method} ${req.originalUrl}`
+        });
+      }
+    });
+  } else {
+    console.warn('⚠️  dist folder not found - frontend not built');
+  }
+}
+
+// 404 handler for development (when not serving frontend)
+if (process.env.NODE_ENV !== 'production') {
   app.use((req, res) => {
     res.status(404).json({
       success: false,

@@ -4,7 +4,8 @@ const { getFileFromS3 } = require('../utils/s3');
 require('dotenv').config();
 
 //load image from s3
-router.get('/file/:key(*)', async (req, res) => {
+// Use :key parameter - Express will capture everything after /file/
+router.get('/file/:key', async (req, res) => {
     console.log('getting image from s3', req.params);
   try { 
     const { key } = req.params;
