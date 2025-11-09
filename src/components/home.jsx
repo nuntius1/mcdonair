@@ -85,16 +85,16 @@ const Home = () => {
 
           <NavbarCollapse id="basic-navbar-nav">
             <Nav className="mx-auto mb-2 mb-lg-0">
-              <Nav.Link href="#home" className="text-black hover:text-black px-2 px-lg-3">
+              <Nav.Link href="#home" className="text-[#EE1C25] hover:text-[#CC1821] px-2 px-lg-3 font-medium">
                 Home
               </Nav.Link>
-              <Nav.Link href="#menu" className="text-black hover:text-black px-2 px-lg-3">
+              <Nav.Link href="#menu" className="text-[#EE1C25] hover:text-[#CC1821] px-2 px-lg-3 font-medium">
                 Menu
               </Nav.Link>
-              <Nav.Link href="#about" className="text-black hover:text-black px-2 px-lg-3">
+              <Nav.Link href="#about" className="text-[#EE1C25] hover:text-[#CC1821] px-2 px-lg-3 font-medium">
                 About
               </Nav.Link>
-              <Nav.Link href="#contact" className="text-black hover:text-black px-2 px-lg-3">
+              <Nav.Link href="#contact" className="text-[#EE1C25] hover:text-[#CC1821] px-2 px-lg-3 font-medium">
                 Contact
               </Nav.Link>
             </Nav>
