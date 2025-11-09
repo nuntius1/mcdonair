@@ -73,8 +73,11 @@ const deleteFromS3 = async (s3Url) => {
 
 const getFileFromS3 = async (fileKey) => {
   const cdn_url = process.env.CDN_URL;
-  try { 
-    return `${cdn_url}${fileKey}`;
+  try {
+    // Ensure CDN_URL has trailing slash and fileKey doesn't have leading slash
+    const cleanCdnUrl = cdn_url?.endsWith('/') ? cdn_url : `${cdn_url}/`;
+    const cleanFileKey = fileKey.startsWith('/') ? fileKey.substring(1) : fileKey;
+    return `${cleanCdnUrl}${cleanFileKey}`;
   } catch (error) {
     console.error('Error getting file from S3:', error);
     throw new Error('Failed to get file from S3');

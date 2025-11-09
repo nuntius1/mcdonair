@@ -4,12 +4,18 @@ const { getFileFromS3 } = require('../utils/s3');
 require('dotenv').config();
 
 //load image from s3
-router.get('/file/:key', async (req, res) => {
+router.get('/file/:key(*)', async (req, res) => {
     console.log('getting image from s3', req.params);
   try { 
-   
     const { key } = req.params;
-    const image = await getFileFromS3('menu-items/' + key);
+    
+    // Handle both cases: key might be just filename or include menu-items/ prefix
+    let fileKey = key;
+    if (!fileKey.startsWith('menu-items/')) {
+      fileKey = `menu-items/${fileKey}`;
+    }
+    
+    const image = await getFileFromS3(fileKey);
     console.log('image', image);
     res.redirect(image);
   } catch (error) {
