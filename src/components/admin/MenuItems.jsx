@@ -284,7 +284,7 @@ export default function MenuItems() {
 
       {/* Menu Items List */}
       {!showForm && (
-        // <Card>
+        <Card>
           <Card.Body>
             {menuItems.length === 0 ? (
               <div className="text-center py-4">
@@ -306,7 +306,7 @@ export default function MenuItems() {
                               {item.image_key && (
                                 <Card.Img 
                                   variant="top" 
-                                  src={item.image_key ? `${window.location.origin}/api/images/file/${item.image_key}` : undefined} 
+                                  src={item.image_key ? `/api/images/file/${item.image_key}` : undefined} 
                                   alt={item.name}
                                   style={{ height: "200px", objectFit: "cover" }}
                                 />
@@ -365,7 +365,7 @@ export default function MenuItems() {
                               {item.image_key && (
                                 <Card.Img 
                                   variant="top" 
-                                  src={item.image_key ? `${window.location.origin}/api/images/file/${item.image_key}` : undefined} 
+                                  src={item.image_key ? `/api/images/file/${item.image_key}` : undefined} 
                                   alt={item.name}
                                   style={{ height: "200px", objectFit: "cover" }}
                                 />
@@ -499,7 +499,7 @@ export default function MenuItems() {
                   <div className="mt-2">
                     <p className="small text-black mb-1">Current image:</p>
                     <img 
-                      src={editingItem.image_key ? `${window.location.origin}/api/images/file/${editingItem.image_key}` : undefined} 
+                      src={editingItem.image_key ? `/api/images/file/${editingItem.image_key}` : undefined} 
                       alt={editingItem.name}
                       style={{ maxWidth: "200px", maxHeight: "200px", objectFit: "cover", border: "1px solid #ddd", borderRadius: "4px", padding: "5px" }}
                     />
